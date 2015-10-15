@@ -40,7 +40,7 @@ namespace Cheers
 
             DateTime userBday = new DateTime(DateTime.Now.Year, mon, day);
 
-            DateTime now = DateTime.Now;
+            DateTime now = DateTime.Today;
 
             
             int result = DateTime.Compare(userBday, now);
@@ -53,13 +53,13 @@ namespace Cheers
             {
                 TimeSpan elapsed = userBday.Subtract(now);
                 double daysAgo = elapsed.TotalDays;
-                System.Console.WriteLine("It is " + daysAgo.ToString("0") + " days until your birthday.");
+                System.Console.WriteLine("It is " + daysAgo.ToString("0") + " days until your next birthday.");
             }
             if(result < 0)
             {
                 TimeSpan elapsed = now.AddYears(1).Subtract(userBday);
                 double daysAgo = elapsed.TotalDays;
-                System.Console.WriteLine("It is " + (daysAgo.ToString("0")) + " days until your birthday.");
+                System.Console.WriteLine("It is " + (daysAgo.ToString("0")) + " days until your next birthday.");
             }
             
             
